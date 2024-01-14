@@ -1,37 +1,34 @@
-const rps = ['rock', 'paper', 'scissors']
+const rps = ['Rock', 'Paper', 'Scissors']
 
-function userInput() {
+// function userInput() {
 
-    let choice = prompt("Please type Rock, Paper, or Scissors: ").toLowerCase();
-    if (choice != 'rock' && choice != 'paper' && choice != 'scissors'){
-        alert('Please try again')
-        choice = userInput();
-    }
-    return choice;
-}
+//     let choice = prompt("Please type Rock, Paper, or Scissors: ").toLowerCase();
+//     if (choice != 'rock' && choice != 'paper' && choice != 'scissors'){
+//         alert('Please try again')
+//         choice = userInput();
+//     }
+//     return choice;
+// }
 
 
 function rockPaperScissors(userChoice) {
+    let random = Math.floor(Math.random()*3)
+    let compChoice = rps[random];
 
-    let userChoice = userInput();
-    let compChoice = rps[Math.floor(Math.random()*4)];
-
-
+    console.log(userChoice);
+    console.log(compChoice);
 
     if (userChoice == compChoice){
 
-        alert("You chose: " + userChoice + "\nThe Computer chose: " + compChoice + "\nIt's a tie")
         return 1
     }
-    else if ((userChoice == 'rock' && compChoice == 'paper') || (userChoice == 'paper' && compChoice == 'scissors') || (userChoice == 'scissors' && compChoice == 'rock')){
+    else if ((userChoice == 'Rock' && compChoice == 'Paper') || (userChoice == 'Paper' && compChoice == 'Scissors') || (userChoice == 'Scissors' && compChoice == 'Rock')){
 
-        alert("You chose: " + userChoice + "\nThe Computer chose: " + compChoice + "\nYou lose!")
         return 2
         
     }
-    else if ((userChoice == 'paper' && compChoice == 'rock') || (userChoice == 'scissors' && compChoice == 'paper') || (userChoice == 'rock' && compChoice == 'scissors')){
+    else if ((userChoice == 'Paper' && compChoice == 'Rock') || (userChoice == 'Scissors' && compChoice == 'Paper') || (userChoice == 'Rock' && compChoice == 'Scissors')){
 
-        alert("You chose: " + userChoice + "\nThe Computer chose: " + compChoice + "\nYou win!")
         return 3
     }
 }
@@ -41,40 +38,59 @@ let win;
 let userScore = 0;
 let compScore = 0;
 
-while (!winner) {
-    
-    win = rockPaperScissors()
+function addScore (result) {
 
-    if (win == 3) {
+    if (result == 3) {
 
         userScore++;
-        alert("The current score is\nPlayer: " + userScore + "\nComputer: " + compScore)
+        userScoreDisp.textContent = 'User Score: ' + userScore;
 
     }
-    else if (win == 2){
+    else if (result == 2){
 
         compScore++;
-        alert("The current score is\nPlayer: " + userScore + "\nComputer: " + compScore)
+        compScoreDisp.textContent = 'Computer Score: ' + compScore;
 
     }
+}
 
+const rockBtn = document.querySelector("#Rock");
+const paperBtn = document.querySelector("#Paper");
+const scissorsBtn = document.querySelector("#Scissors");
+const userScoreDisp = document.querySelector('#userScore')
+const compScoreDisp = document.querySelector('#compScore')
 
+userScoreDisp.textContent = 'User Score: ' + userScore;
+compScoreDisp.textContent = 'Computer Score: ' + compScore;
+
+let userChoice;
+
+rockBtn.addEventListener('click', () => {
     
+    userChoice = 'Rock';
+    let result = rockPaperScissors(userChoice);
+    addScore(result);
 
-    if (userScore == 3 || compScore == 3){
+})
 
-        winner = true
 
-    }
-}
-if (userScore > compScore) {
+paperBtn.addEventListener('click', () => {
+    
+    userChoice = 'Paper';
+    let result = rockPaperScissors(userChoice);
+    addScore(result);
+})
 
-    alert("You win!")
 
-}
-else {
+scissorsBtn.addEventListener('click', () => {
+    
+    userChoice = 'Scissors';
+    let result = rockPaperScissors(userChoice);
+    addScore(result);
+})
 
-    alert("You lose!")
 
-}
+
+
+
 
