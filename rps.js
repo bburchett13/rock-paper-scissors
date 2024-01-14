@@ -11,7 +11,7 @@ function userInput() {
 }
 
 
-function rockPaperScissors() {
+function rockPaperScissors(userChoice) {
 
     let userChoice = userInput();
     let compChoice = rps[Math.floor(Math.random()*4)];
