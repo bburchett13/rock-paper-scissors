@@ -66,6 +66,7 @@ h2, #gameComment, #userScore, #compScore {
 
     align-items: center;
     justify-content: center;
+    padding: 40px;
 
 }
 
@@ -90,6 +91,7 @@ h2, #gameComment, #userScore, #compScore {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    padding-bottom: 40px;
 
 }
 
