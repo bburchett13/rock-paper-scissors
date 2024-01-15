@@ -1,4 +1,81 @@
 
+
+.header {
+
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px;
+    background-color: #111720;
+
+}
+
+h1 {
+
+    color: #fac650;
+
+}
+
+.h1Water {
+
+    color: blue;
+
+}
+
+.h1Grass {
+
+    color: green;
+
+}
+
+.h1Fire {
+
+    color: red;
+
+}
+
+#game {
+
+    background-color: #222831;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h2, #gameComment, #userScore, #compScore {
+
+    color: white;
+
+}
+
+.scoreBox {
+
+    height: 120px;
+    width: 120px;
+
+}
+
+.scores {
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.compSign, .userSign {
+
+    font-size: 80px;
+
+}
+
+.scoreBox {
+
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    gap:80px;
+
+}
+
 .buttons {
 
     display: flex;
@@ -11,6 +88,9 @@
 .gameBtn {
 
     border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: #393e46;
 
 }
 
@@ -20,3 +100,4 @@
 
 
 }
+

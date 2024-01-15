@@ -8,20 +8,31 @@
 
         <title>Water, Grass Fire!</title>
 
-        <style src="style.css"></style>
+        <link rel="stylesheet" href="style.css">
 
         <script src="rps.js" defer></script>
 
     </head>
 
     <body>
+        <header class="header">
+            <h1>Let's play <span class='h1Water'>Water,</span> <span class='h1Grass'>Grass,</span> <span class='h1Fire'>Fire!</span></h1>
+        </header>
 
-        <h1>Let's play Water, Grass, Fire!</h1>
-        <div id="game">
+        <main id="game">
 
-            <p id="userScore">User Score: </p>
-            <p id="compScore">Computer Score</p>
-            <p id="gameResult">Press a button to play!</p>
+            <div class="scores">
+                <h2 id="gameResult">Press a button to play!</h2>
+                <p id="gameComment">Have fun!</p>
+                <div class="scoreBox">
+                    <div class="userSign">❓</div>
+                    <p id="userScore">Player: </p>
+                </div>
+                <div class="scoreBox">
+                    <div class="compSign">❓</div>
+                    <p id="compScore">Computer: </p>
+                </div>
+            </div>
 
             <div class="buttons">
                 <button id="Rock" class="gameBtn">   
@@ -35,9 +46,7 @@
                 </button>
             </div>
 
-
-
-        </div>
+        </main>
         
 
 
