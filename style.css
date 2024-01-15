@@ -1,0 +1,22 @@
+
+.buttons {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+.gameBtn {
+
+    border-radius: 10px;
+
+}
+
+.symbol {
+
+    font-size: 80px;
+
+
+}

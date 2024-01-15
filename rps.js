@@ -1,4 +1,4 @@
-const rps = ['Rock', 'Paper', 'Scissors']
+const rps = ['Water', 'Grass', 'Fire']
 
 // Function to play the game
 function rockPaperScissors(userChoice) {
@@ -9,7 +9,7 @@ function rockPaperScissors(userChoice) {
         gameRes.textContent = 'The Computer Chose ' + compChoice + '! It\'s a Tie!';
 
     }
-    else if ((userChoice == 'Rock' && compChoice == 'Paper') || (userChoice == 'Paper' && compChoice == 'Scissors') || (userChoice == 'Scissors' && compChoice == 'Rock')){
+    else if ((userChoice == 'Water' && compChoice == 'Grass') || (userChoice == 'Grass' && compChoice == 'Fire') || (userChoice == 'Fire' && compChoice == 'Water')){
         
         compScore++;
         compScoreDisp.textContent = 'Computer Score: ' + compScore;
@@ -17,7 +17,7 @@ function rockPaperScissors(userChoice) {
 
         
     }
-    else if ((userChoice == 'Paper' && compChoice == 'Rock') || (userChoice == 'Scissors' && compChoice == 'Paper') || (userChoice == 'Rock' && compChoice == 'Scissors')){
+    else if ((userChoice == 'Grass' && compChoice == 'Water') || (userChoice == 'Fire' && compChoice == 'Grass') || (userChoice == 'Water' && compChoice == 'Fire')){
         
         userScore++;
         userScoreDisp.textContent = 'User Score: ' + userScore;
@@ -62,7 +62,7 @@ let userChoice;
 
 rockBtn.addEventListener('click', () => {
     
-    userChoice = 'Rock';
+    userChoice = 'Water';
     rockPaperScissors(userChoice);
 
 })
@@ -70,7 +70,7 @@ rockBtn.addEventListener('click', () => {
 
 paperBtn.addEventListener('click', () => {
     
-    userChoice = 'Paper';
+    userChoice = 'Grass';
     rockPaperScissors(userChoice);
 
 })
@@ -78,7 +78,7 @@ paperBtn.addEventListener('click', () => {
 
 scissorsBtn.addEventListener('click', () => {
     
-    userChoice = 'Scissors';
+    userChoice = 'Fire';
     rockPaperScissors(userChoice);
 
 })
