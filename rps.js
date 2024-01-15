@@ -1,49 +1,42 @@
 const rps = ['Rock', 'Paper', 'Scissors']
 
-// function userInput() {
-
-//     let choice = prompt("Please type Rock, Paper, or Scissors: ").toLowerCase();
-//     if (choice != 'rock' && choice != 'paper' && choice != 'scissors'){
-//         alert('Please try again')
-//         choice = userInput();
-//     }
-//     return choice;
-// }
-
-
+// Function to play the game
 function rockPaperScissors(userChoice) {
-    let random = Math.floor(Math.random()*3)
-    let compChoice = rps[random];
-
-    console.log(userChoice);
-    console.log(compChoice);
+    let compChoice = rps[Math.floor(Math.random()*3)];
 
     if (userChoice == compChoice){
 
-        return 1
+        gameRes.textContent = 'The Computer Chose ' + compChoice + '! It\'s a Tie!';
+
     }
     else if ((userChoice == 'Rock' && compChoice == 'Paper') || (userChoice == 'Paper' && compChoice == 'Scissors') || (userChoice == 'Scissors' && compChoice == 'Rock')){
+        
+        compScore++;
+        compScoreDisp.textContent = 'Computer Score: ' + compScore;
+        gameRes.textContent = 'The Computer Chose ' + compChoice + '! You Lose!';
 
-        return 2
         
     }
     else if ((userChoice == 'Paper' && compChoice == 'Rock') || (userChoice == 'Scissors' && compChoice == 'Paper') || (userChoice == 'Rock' && compChoice == 'Scissors')){
+        
+        userScore++;
+        userScoreDisp.textContent = 'User Score: ' + userScore;
+        gameRes.textContent = 'The Computer Chose ' + compChoice + '! You Win!';
 
-        return 3
     }
 }
 
-let winner = false;
-let win;
 let userScore = 0;
 let compScore = 0;
 
+// function to take result of game and update score
 function addScore (result) {
 
     if (result == 3) {
 
         userScore++;
         userScoreDisp.textContent = 'User Score: ' + userScore;
+        gameRes.textContent = 'The Computer Chose' + compChoice + '! You Win!'
 
     }
     else if (result == 2){
@@ -59,17 +52,18 @@ const paperBtn = document.querySelector("#Paper");
 const scissorsBtn = document.querySelector("#Scissors");
 const userScoreDisp = document.querySelector('#userScore')
 const compScoreDisp = document.querySelector('#compScore')
+const gameRes = document.querySelector('#gameResult')
 
 userScoreDisp.textContent = 'User Score: ' + userScore;
 compScoreDisp.textContent = 'Computer Score: ' + compScore;
+gameRes.textContent = 'Press a button to play!'
 
 let userChoice;
 
 rockBtn.addEventListener('click', () => {
     
     userChoice = 'Rock';
-    let result = rockPaperScissors(userChoice);
-    addScore(result);
+    rockPaperScissors(userChoice);
 
 })
 
@@ -77,16 +71,16 @@ rockBtn.addEventListener('click', () => {
 paperBtn.addEventListener('click', () => {
     
     userChoice = 'Paper';
-    let result = rockPaperScissors(userChoice);
-    addScore(result);
+    rockPaperScissors(userChoice);
+
 })
 
 
 scissorsBtn.addEventListener('click', () => {
     
     userChoice = 'Scissors';
-    let result = rockPaperScissors(userChoice);
-    addScore(result);
+    rockPaperScissors(userChoice);
+
 })
 
 
