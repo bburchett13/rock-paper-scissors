@@ -9,13 +9,13 @@ function rockPaperScissors(userChoice) {
     userSign.textContent = wgf[rps.indexOf(userChoice)];
     compSign.textContent = wgf[random];
 
-    if (userChoice == compChoice){
+    if (userChoice === compChoice){
 
         gameRes.textContent = 'It\'s a Tie!';
         gameComment.textContent = userChoice + ' and ' + compChoice + ' tie!'
 
     }
-    else if ((userChoice == 'Water' && compChoice == 'Grass') || (userChoice == 'Grass' && compChoice == 'Fire') || (userChoice == 'Fire' && compChoice == 'Water')){
+    else if ((userChoice === 'Water' && compChoice === 'Grass') || (userChoice === 'Grass' && compChoice === 'Fire') || (userChoice === 'Fire' && compChoice === 'Water')){
         
         compScore++;
         compScoreDisp.textContent = 'Computer: ' + compScore;
@@ -24,7 +24,7 @@ function rockPaperScissors(userChoice) {
 
         
     }
-    else if ((userChoice == 'Grass' && compChoice == 'Water') || (userChoice == 'Fire' && compChoice == 'Grass') || (userChoice == 'Water' && compChoice == 'Fire')){
+    else if ((userChoice === 'Grass' && compChoice === 'Water') || (userChoice === 'Fire' && compChoice === 'Grass') || (userChoice === 'Water' && compChoice === 'Fire')){
         
         userScore++;
         userScoreDisp.textContent = 'Player: ' + userScore;
